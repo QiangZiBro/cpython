@@ -103,9 +103,9 @@ typedef struct _typeobject PyTypeObject;
  * in addition, be cast to PyVarObject*.
  */
 typedef struct _object {
-    _PyObject_HEAD_EXTRA
-    Py_ssize_t ob_refcnt;
-    PyTypeObject *ob_type;
+    _PyObject_HEAD_EXTRA /* C语言宏 */
+    Py_ssize_t ob_refcnt; /* 对象的引用计数 */
+    PyTypeObject *ob_type; /* 表示这个对象的类型 */
 } PyObject;
 
 /* Cast argument to PyObject* type. */
